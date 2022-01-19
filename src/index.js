@@ -1,17 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import fotinha from '../src/img/diva.jpeg'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const teAmo='Te amo morrr'
+const vidaAposVida='Vida após a vida'
+
+
+function ListPicture() {
+    return (
+
+        <section className={"listPicture"}>
+            <Picture teAmo esposa='Thais'/>
+            <Picture vidaAposVida esposa='Thais'/>
+        </section>
+
+    );
+}
+
+
+const Picture = (props) => {
+    return (
+        <article className='Picture'>
+            <h1>{teAmo}</h1>
+            <h2>{props.esposa}</h2>
+            <p>{vidaAposVida}</p>
+        </article>
+    )
+}
+
+
+ReactDOM.render(<ListPicture/>, document.getElementById('root'));
